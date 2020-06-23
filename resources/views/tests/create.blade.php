@@ -1,8 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.laravel-quiz')</h3>
-    {!! Form::open(['method' => 'POST', 'route' => ['tests.store']]) !!}
+    <h3 class="page-title">@lang('quickadmin.laravel-quiz')
+
+    <script type="text/javascript">
+        var timeLeft = 2*60;
+
+    </script>
+        <div   id="time" style="float:right">timeout</div>>
+    </h3>
+
+    {!! Form::open(['method' => 'POST', 'route' => ['tests.store']],['id'=>'form1']) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -12,6 +20,7 @@
     @if(count($questions) > 0)
         <div class="panel-body">
         <?php $i = 1; ?>
+
         @foreach($questions as $question)
             @if ($i > 1) <hr /> @endif
             <div class="row">
@@ -56,11 +65,36 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
     <script>
+
         $('.datetime').datetimepicker({
             autoclose: true,
             dateFormat: "{{ config('app.date_format_js') }}",
             timeFormat: "hh:mm:ss"
+
         });
+
+
+        function timeout() {
+
+            var minute=Math.floor(timeLeft/60);
+            var second=timeLeft%60;
+            if(timeLeft<=0)
+            {
+                clearTimeout(timeout());
+              document.getElementById("form1").submit();
+
+
+            }
+                else
+                {
+                    document.getElementById("time").innerHTML=minute+":"+second;
+                }
+                timeLeft--;
+                var tm =setTimeout(function (){timeout(),1000} );
+
+
+        }
+
     </script>
 
 @stop

@@ -2,6 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.results.title')</h3>
+
     {!! Form::open(['method' => 'POST', 'route' => ['results.store']]) !!}
 
     <div class="panel panel-default">

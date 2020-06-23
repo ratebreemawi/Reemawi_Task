@@ -2,6 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.results.title')</h3>
+
     
     {!! Form::model($result, ['method' => 'PUT', 'route' => ['results.update', $result->id]]) !!}
 
