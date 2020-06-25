@@ -35,5 +35,5 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.standalone.min.css"/>
 
 <meta property="og:title" content="ReemawiQuiz - how well do you know Laravel?" />
-<meta property="og:image" content="{{ asset('laraquiz.png') }}" />
-<meta property="og:description" content="Mini-project with Laravel Quiz. Powered by QuickAdminPanel.com code generator." />
+<meta property="og:image" content="{{ asset('laraquiz.jpj') }}" />
+<meta property="og:description" content="Mini-project with Laravel Quiz. Powered by Islamicbank IT Department." />

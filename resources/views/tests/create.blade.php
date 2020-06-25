@@ -1,20 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+    <body >
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')
 
     <script type="text/javascript">
-        var timeLeft = 2*60;
+        var timeLeft = '${sessionScope.sec}';
+        timeLeft=120*100;
 
     </script>
-        <div   id="time" style="float:right">timeout</div>>
+        <div   id="pie_to_be" style="float:right">timeout</div>>
     </h3>
 
-    {!! Form::open(['method' => 'POST', 'route' => ['tests.store']],['id'=>'form1']) !!}
+    {!! Form::open(['method' => 'POST', 'route' => ['tests.store'],'id'=>'caspioform']) !!}
 
-    <div class="panel panel-default">
+    <div class="panel panel-default"  >
         <div class="panel-heading">
-            @lang('quickadmin.quiz')
+            @lang('Answer these 10 questions. Note There is a Limitation on Time.')
         </div>
         <?php //dd($questions) ?>
     @if(count($questions) > 0)
@@ -57,7 +59,9 @@
 
     {!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
+    </body>
 @stop
+
 
 @section('javascript')
     @parent
@@ -65,35 +69,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.4.5/jquery-ui-timepicker-addon.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
     <script>
-
         $('.datetime').datetimepicker({
             autoclose: true,
             dateFormat: "{{ config('app.date_format_js') }}",
             timeFormat: "hh:mm:ss"
-
         });
 
+        var myseconds = 10;
+      var mycolor = 'rgba(255, 100, 0, 0.8)';
+      alert('You will have '+Math.floor(myseconds/60)+' minutes and '+myseconds%60+' seconds to finish. Press “OK” to begin.'); $(function(){ $('div#pie_to_be').pietimer({ seconds: myseconds, color: mycolor }, function(){ $('#caspioform').submit(); });}); (function($){jQuery.fn.pietimer=function(options,callback){var settings={'seconds':10,'color':'rgba(255, 255, 255, 0.8)','height':this.height(),'width':this.width()};if(options){$.extend(settings,options);}this.html('<canvas id="pie_timer" width="'+settings.height+'" height="'+settings.height+'">'+settings.seconds+'</canvas>');var val=360;interval=setInterval(timer,40);function timer(){var canvas=document.getElementById('pie_timer');if(canvas.getContext){val-=(360/settings.seconds)/24;if(val<=0){clearInterval(interval);canvas.width=canvas.width;if(typeof callback=='function'){callback.call();}}else{canvas.width=canvas.width;var ctx=canvas.getContext('2d');var canvas_size=[canvas.width,canvas.height];var radius=Math.min(canvas_size[0],canvas_size[1])/2;var center=[canvas_size[0]/2,canvas_size[1]/2];ctx.beginPath();ctx.moveTo(center[0],center[1]);var start=(3*Math.PI)/2;ctx.arc(center[0],center[1],radius,start-val*(Math.PI/180),start,false);ctx.closePath();ctx.fillStyle=settings.color;ctx.fill();}}}return this;};})(jQuery); var isMSIE = /*@cc_on!@*/0; if(isMSIE){function ticker(){document.getElementById('pie_to_be').innerHTML=parseInt(document.getElementById('pie_to_be').innerHTML)-1;} setInterval("ticker()",1000);setTimeout("$('#caspioform').submit()",myseconds*1000);}
 
-        function timeout() {
-
-            var minute=Math.floor(timeLeft/60);
-            var second=timeLeft%60;
-            if(timeLeft<=0)
-            {
-                clearTimeout(timeout());
-              document.getElementById("form1").submit();
-
-
-            }
-                else
-                {
-                    document.getElementById("time").innerHTML=minute+":"+second;
-                }
-                timeLeft--;
-                var tm =setTimeout(function (){timeout(),1000} );
-
-
-        }
 
     </script>
 
