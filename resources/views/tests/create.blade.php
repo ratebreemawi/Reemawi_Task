@@ -1,12 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <body >
+    <body>
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')
 
     <script type="text/javascript">
-        var timeLeft = '${sessionScope.sec}';
-        timeLeft=120*100;
 
     </script>
         <div   id="pie_to_be" style="float:right">timeout</div>>
@@ -56,10 +54,9 @@
         </div>
     @endif
     </div>
-
+    </body>
     {!! Form::submit(trans('quickadmin.submit_quiz'), ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
-    </body>
 @stop
 
 

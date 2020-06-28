@@ -78,6 +78,22 @@
             dateFormat: "{{ config('app.date_format_js') }}",
             timeFormat: "hh:mm:ss"
         });
+        window.onbeforeunload = function (e) {
+            var e = e || window.event;
+            // Do some controls here ...
+            // Do synchrone call here ...
+            // Message in the confirmation dialog
+
+            // For IE and Firefox
+            if (e) {
+                e.returnValue = 'Are you sure want to quit this quiz';
+            }
+
+            // For Safari
+            return 'Are you sure want to quit this quiz';
+
+        };
     </script>
 
 @stop
+

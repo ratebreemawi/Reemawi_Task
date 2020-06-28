@@ -1,9 +1,9 @@
 @extends('layouts.auth')
 
 @section('content')
-    <div class="row">
+    <div class="row" style="background-color: yellow">
         <div class="col-md-8 col-md-offset-2" >
-            <h1 class="text-center" style="color: brown">ReemawiQuiz</h1>
+            <h1 class="text-center" style="color: brown"><b>ReemawiQuiz</b></h1>
             <h3 class="text-center" style="color: brown">How well do you know Laravel?</h3>
             <br />
             <div class="panel panel-default">
@@ -93,8 +93,8 @@
                     </form>
                 </div>
             </div>
-            <div class="text-center" style="color: white">Created by <a href="http://laraveldaily.com">Rateb Reemawi</a></div>
-            <div class="text-center" style="color: white">Powered by <a href="https://islamicbank.ps/">Islamic Bank IT Department</a></div>
+            <div class="text-center" style="color: black">Created by <a href="http://laraveldaily.com" style=><b>Rateb Reemawi</b></a></div>
+            <div class="text-center" style="color: black">Powered by <a href="https://islamicbank.ps/"><b>Islamic Bank IT Department</b></a></div>
         </div>
     </div>
 @endsection
