@@ -1,14 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
-    <h3 class="page-title">@lang('quickadmin.results.title')</h3>
 
-    <div class="panel panel-default">
+    <style>
+
+        #reemawi {
+            background-color: #0000ff;
+            color: white;
+            font-size: 20px;
+            margin-left: 800px;
+
+        }
+
+        #grad1 {
+            height: 2000px;
+            background-color: pink;
+
+
+
+        }
+    </style>
+
+    <div class="panel panel-default"  id="grad1">
         <div class="panel-heading">
             @lang('quickadmin.view-result')
         </div>
 
-        <div class="panel-body">
+        <div class="panel-body" >
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-bordered table-striped">
@@ -37,7 +55,7 @@
                         @if ($result->question->code_snippet != '')
                             <tr>
                                 <td>Code snippet</td>
-                                <td><div class="code_snippet">{!! $result->question->code_snippet !!}</div></td>
+                                <td><div class="code_snippet" >{!! $result->question->code_snippet !!}</div></td>
                             </tr>
                         @endif
                         <tr>
@@ -45,9 +63,9 @@
                             <td>
                                 <ul>
                                 @foreach($result->question->options as $option)
-                                    <li style="@if ($option->correct == 1) font-weight: bold; @endif
+                                    <li style="@if ($option->correct == 1) font-weight: bold; background-color: green  @endif
                                         @if ($result->option_id == $option->id) text-decoration: underline @endif">{{ $option->option }}
-                                        @if ($option->correct == 1) <em>(correct answer)</em> @endif
+                                        @if ($option->correct == 1) <em> <i class="fa fa-check-square"></i>(correct answer)</em> @endif
                                         @if ($result->option_id == $option->id) <em>(your answer)</em> @endif
                                     </li>
                                 @endforeach
@@ -55,7 +73,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Answer Explanation</td>
+                            <td style="color: red">Answer Explanation</td>
                             <td>
                             {!! $result->question->answer_explanation  !!}
                                 @if ($result->question->more_info_link != '')
@@ -73,9 +91,26 @@
             </div>
 
             <p>&nbsp;</p>
+            <div class="panel-body">
+                <div class="form-group">
 
-            <a href="{{ route('tests.index') }}" class="btn btn-default">Take another quiz</a>
-            <a href="{{ route('results.index') }}" class="btn btn-default">See all my results</a>
+                    <div class="col-md-6">
+
+                        <a href="{{ route('tests.index') }}" class="btn btn-default" id="reemawi"><i class="fa fa-question" style="color: red"></i><b>Take another quiz</b></a>
+
+                    </div>
+                </div>
+                <h2>.........................................................................................................................................................................................................................................................................................................................
+                </h2>
+                <div class="form-group">
+
+                    <div class="col-md-6">
+
+                        <a href="{{ route('results.index') }}" class="btn btn-default" id="reemawi"><i class="fa fa-arrow-circle-o-right" style="color: red"></i><b>See all my results</b></a>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @stop

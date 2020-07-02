@@ -1,14 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #gred1 {
+        background-color: grey;
+        }
+    </style>
+
     <h3 class="page-title">@lang('quickadmin.topics.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['topics.store']]) !!}
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="gred1">
         <div class="panel-heading">
             @lang('quickadmin.create')
         </div>
-        
+
         <div class="panel-body">
             <div class="row">
                 <div class="col-xs-12 form-group">
@@ -22,7 +28,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <h3 class="page-title">@lang('quickadmin.topics.title')</h3>
-    
+
     {!! Form::model($topic, ['method' => 'PUT', 'route' => ['topics.update', $topic->id]]) !!}
 
     <div class="panel panel-default">
@@ -23,7 +23,7 @@
                     @endif
                 </div>
             </div>
-            
+
         </div>
     </div>
 

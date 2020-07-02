@@ -1,5 +1,9 @@
 @extends('layouts.app')
-
+<style>
+    #gred1 {
+        background-color: #1BA39C;
+    }
+</style>
 @section('content')
     <h3 class="page-title">@lang('quickadmin.questions-options.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['questions_options.store']]) !!}
@@ -9,7 +13,7 @@
             @lang('quickadmin.create')
         </div>
         
-        <div class="panel-body">
+        <div class="panel-body" id="gred1">
             <div class="row">
                 <div class="col-xs-12 form-group">
                     {!! Form::label('question_id', 'question*', ['class' => 'control-label']) !!}

@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #gred1 {
+            background-color: grey;
+        }
+    </style>
     <h3 class="page-title">@lang('quickadmin.user-actions.title')</h3>
 
     <p>
         
     </p>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="gred1">
         <div class="panel-heading">
             @lang('quickadmin.list')
         </div>

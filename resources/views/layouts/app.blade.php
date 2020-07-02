@@ -1,45 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-<head>
+
+
+<head >
     @include('partials.head')
 </head>
 
-<body class="page-header-fixed">
+<body id="g" class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden login-page">
 
     @include('partials.analytics')
 
-    <div class="page-header navbar navbar-fixed-top">
+    <div>
         @include('partials.header')
     </div>
 
-    <div class="clearfix"></div>
+    <div ></div>
 
-    <div class="page-container">
-        <div class="page-sidebar-wrapper">
+    <div >
+        <div >
             @include('partials.sidebar')
         </div>
 
-        <div class="page-content-wrapper">
-            <div class="page-content">
+        <div >
+            <div >
 
                 @if(isset($siteTitle))
-                    <h3 class="page-title">
+                    <h3 >
                         {{ $siteTitle }}
                     </h3>
                 @endif
 
-                <div class="row">
-                    <div class="col-md-12">
+                <div >
+                    <div >
 
                         @if (Session::has('message'))
-                            <div class="note note-info">
+                            <div >
                                 <p>{{ Session::get('message') }}</p>
                             </div>
                         @endif
                         @if ($errors->count() > 0)
-                            <div class="note note-danger">
-                                <ul class="list-unstyled">
+                            <div >
+                                <ul >
                                     @foreach($errors->all() as $error)
                                         <li>{{ $error }}</li>
                                     @endforeach
@@ -55,9 +57,8 @@
         </div>
     </div>
 
-    <div class="scroll-to-top"
-         style="display: none;">
-        <i class="fa fa-arrow-up"></i>
+    <div >
+        <i></i>
     </div>
 
     {!! Form::open(['route' => 'auth.logout', 'style' => 'display:none;', 'id' => 'logout']) !!}

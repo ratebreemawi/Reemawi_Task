@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #gred1 {
+            background-color: #1BA39C;
+        }
+    </style>
     <h3 class="page-title">@lang('quickadmin.questions.title')</h3>
     {!! Form::open(['method' => 'POST', 'route' => ['questions.store']]) !!}
 

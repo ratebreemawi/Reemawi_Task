@@ -1,20 +1,17 @@
-<div class="page-header-inner">
-    <div class="page-header-inner">
-        <div class="navbar-header">
+<div >
+    <div >
+        <div >
             <a href="{{ url('/') }}"
-               class="navbar-brand">
-                @lang("ReemawiQuiz")
+              >
 
             </a>
         </div>
         <a href="javascript:;"
-           class="menu-toggler responsive-toggler"
-           data-toggle="collapse"
-           data-target=".navbar-collapse">
+           >
         </a>
 
-        <div class="top-menu">
-            <ul class="nav navbar-nav pull-right">
+        <div >
+            <ul>
 
             </ul>
         </div>

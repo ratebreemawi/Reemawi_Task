@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #gred1 {
+            background-color: #1BA39C;
+        }
+    </style>
     <h3 class="page-title">@lang('quickadmin.questions.title')</h3>
 
     <p>
         <a href="{{ route('questions.create') }}" class="btn btn-success">@lang('quickadmin.add_new')</a>
     </p>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="gred1">
         <div class="panel-heading">
             @lang('quickadmin.list')
         </div>

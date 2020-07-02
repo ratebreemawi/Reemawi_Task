@@ -9,15 +9,15 @@
 
     @include('partials.analytics')
 
-    <div style="margin-top: 10%;"></div>
+    <div ></div>
 
-    <div class="container-fluid">
+    <div >
         @yield('content')
     </div>
 
-    <div class="scroll-to-top"
-         style="display: none;">
-        <i class="fa fa-arrow-up"></i>
+    <div
+         >
+        <i ></i>
     </div>
 
     @include('partials.javascripts')

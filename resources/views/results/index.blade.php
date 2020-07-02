@@ -1,9 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #grad1 {
+            height: auto;
+            background-color: pink;
+            width: 900px;
+
+        }
+    </style>
     <h3 class="page-title">@lang('quickadmin.results.title')</h3>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="grad1">
         <div class="panel-heading">
             @lang('quickadmin.list')
         </div>
@@ -26,17 +34,19 @@
                         @foreach ($results as $result)
                             <tr>
                             @if(Auth::user()->isAdmin())
-                                <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})</td>
+                                <td>{{ $result->user->name or '' }} ({{ $result->user->email or '' }})>>>>>>>>>>>>>>>></td>
                             @endif
-                                <td>{{ $result->created_at or '' }}</td>
-                                <td>{{ $result->result }}/10</td>
+                                <td>{{ $result->created_at or '' }}>>>>>>>>>>>>>>>>></td>
+                                <td>{{ $result->result }}/10 >>>>>>>>>>>>>>>>></td>
                                 <td>
-                                    <a href="{{ route('results.show',[$result->id]) }}" class="btn btn-xs btn-primary">@lang('quickadmin.view')</a>
+                                    <a href="{{ route('results.show',[$result->id]) }}" class="btn btn-xs btn-primary" style="background-color:lightgreen">@lang('view')</a>
                                 </td>
+
                             </tr>
                         @endforeach
                     @else
                         <tr>
+
                             <td colspan="6">@lang('quickadmin.no_entries_in_table')</td>
                         </tr>
                     @endif

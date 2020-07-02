@@ -1,7 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-    <body>
+    <style>
+        #grad1 {
+            height: 1500px;
+            background-color: #cccccc;
+            background-image: url("/questions.png");
+            margin-top: 20px;
+
+        }
+        html {
+            margin: 0;
+        }
+        body {
+            background-color: #FFFFFF;
+            font-size: 17px;
+            margin: 36pt;
+        }
+    </style>
+    <body >
     <h3 class="page-title">@lang('quickadmin.laravel-quiz')
 
     <script type="text/javascript">
@@ -12,7 +29,7 @@
 
     {!! Form::open(['method' => 'POST', 'route' => ['tests.store'],'id'=>'caspioform']) !!}
 
-    <div class="panel panel-default"  >
+    <div class="panel panel-default"  id="grad1">
         <div class="panel-heading">
             @lang('Answer these 10 questions. Note There is a Limitation on Time.')
         </div>

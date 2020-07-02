@@ -1,24 +1,16 @@
-<div class="page-header navbar navbar-fixed-top">
-    <div class="page-header-inner">
-        <div class="page-header-inner">
-            <div class="navbar-header">
+<div style="background-color: black">
+    <div type="text" name="Reemawi">
+        <div >
+            <div >
                 <a href="{{ url('/home') }}"
-                   class="navbar-brand">
-                    @lang('quickadmin.quickadmin_title')
+                   >
+
                 </a>
             </div>
-            
-            <a href="javascript:;"
-               class="menu-toggler responsive-toggler"
-               data-toggle="collapse"
-               data-target=".navbar-collapse">
+
+            <a href="javascript:;">
+
             </a>
-
-            <div class="top-menu">
-                <ul class="nav navbar-nav pull-right">
-
-                </ul>
-            </div>
         </div>
     </div>
 </div>

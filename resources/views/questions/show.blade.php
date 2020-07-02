@@ -1,9 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        #grad1 {
+            height: 1000px;
+            background-color: yellow;
+
+            margin-top: -20px;
+        }
+    </style>
     <h3 class="page-title">@lang('quickadmin.questions.title')</h3>
     
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="grad1">
         <div class="panel-heading">
             @lang('quickadmin.view')
         </div>
